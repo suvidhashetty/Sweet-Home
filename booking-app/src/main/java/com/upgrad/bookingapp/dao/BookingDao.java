@@ -1,5 +1,8 @@
 package com.upgrad.bookingapp.dao;
 
 
-public class BookingDao {
+import com.upgrad.bookingapp.entitites.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingDao extends JpaRepository<Booking, Integer> {
 }
