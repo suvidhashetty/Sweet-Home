@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class Booking {
+public class BookingInfoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int bookingID;
 
+    @Column(nullable = true)
     private LocalDateTime fromDate;
 
     private LocalDateTime toDate;
