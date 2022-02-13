@@ -1,47 +1,33 @@
-package com.upgrad.bookingapp.entitites;
+package com.upgrad.bookingapp.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "booking")
-public class BookingInfoEntity {
+public class BookingDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
     private int bookingID;
-
-    @Column(nullable = true)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime fromDate;
-
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime toDate;
-
     private String aadharNumber;
-
     private int numOfRooms;
-
     private String roomNumbers;
-
-    @Column(nullable = false)
     private int roomPrice;
-
-    private int transactionId = 0;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private int transactionId;
     private LocalDateTime bookedOn;
 
+    public BookingDto() {
+    }
 
-    public BookingInfoEntity() {
-
+    public BookingDto(int bookingID, LocalDateTime fromDate, LocalDateTime toDate, String aadharNumber, int numOfRooms, String roomNumbers, int roomPrice, int transactionId, LocalDateTime bookedOn) {
+        this.bookingID = bookingID;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.aadharNumber = aadharNumber;
+        this.numOfRooms = numOfRooms;
+        this.roomNumbers = roomNumbers;
+        this.roomPrice = roomPrice;
+        this.transactionId = transactionId;
+        this.bookedOn = bookedOn;
     }
 
     public int getBookingID() {
@@ -115,5 +101,4 @@ public class BookingInfoEntity {
     public void setBookedOn(LocalDateTime bookedOn) {
         this.bookedOn = bookedOn;
     }
-
 }
