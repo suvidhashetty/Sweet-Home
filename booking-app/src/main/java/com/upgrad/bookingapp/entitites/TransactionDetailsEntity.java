@@ -1,4 +1,4 @@
-package com.upgrad.paymentapp.entity;
+package com.upgrad.bookingapp.entitites;
 
 import javax.persistence.*;
 
@@ -63,3 +63,4 @@ public class TransactionDetailsEntity {
         this.cardNumber = cardNumber;
     }
 }
+

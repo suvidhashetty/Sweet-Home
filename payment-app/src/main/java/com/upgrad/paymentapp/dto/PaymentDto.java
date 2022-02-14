@@ -1,26 +1,25 @@
-package com.upgrad.paymentapp.entity;
+package com.upgrad.paymentapp.dto;
 
-import javax.persistence.*;
+import com.upgrad.paymentapp.entity.PaymentType;
 
-@Entity
-@Table(name="transaction")
-public class TransactionDetailsEntity {
+public class PaymentDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int transactionId;
-
-    @Enumerated(EnumType.STRING)
     private PaymentType paymentMode;
-
-    @Column(nullable=false)
     private int bookingId;
-
     private String upiId;
-
     private String cardNumber;
 
-    public TransactionDetailsEntity() {
+
+    public PaymentDto() {
+    }
+
+    public PaymentDto(int transactionId, PaymentType paymentMode, int bookingId, String upiId, String cardNumber) {
+        this.transactionId = transactionId;
+        this.paymentMode = paymentMode;
+        this.bookingId = bookingId;
+        this.upiId = upiId;
+        this.cardNumber = cardNumber;
     }
 
     public int getTransactionId() {
